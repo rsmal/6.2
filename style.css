@@ -11,11 +11,10 @@ body {
 
 .row {
   clear: both; }
-
-.row::before, .row::after {
-  content: "";
-  display: table;
-  clear: both; }
+  .row::before, .row::after {
+    content: "";
+    display: table;
+    clear: both; }
 
 [class*="col-"] {
   float: left;
@@ -68,52 +67,57 @@ header {
   color: #FFF;
   background-color: #313332; }
 
-.nav ul {
+.nav__lvl_1 {
   margin: 0;
   list-style-type: none;
   overflow: hidden; }
-.nav li {
+.nav__links {
   text-transform: uppercase;
   display: inline-block;
   padding: 10px;
   float: right; }
-  .nav li:hover {
+  .nav__links:hover {
     color: #00C7E8; }
-.nav h1 {
+.nav__header {
   margin: 0 auto;
   text-transform: uppercase;
   margin-top: 5px;
   float: left;
   margin-left: 50px; }
 
-.hero__section {
+.hero {
   background-image: url("https://tinyurl.com/ybml2u4p");
   background-size: 100%;
   width: 100%;
   background-position: center;
   color: #FFF;
   overflow: auto; }
-
-.hero {
-  margin-top: 100px;
-  margin-bottom: 100px;
-  font-size: 25px;
-  float: right;
-  background-color: rgba(0, 0, 0, 0.8);
-  padding: 10px 50px 25px; }
-
-h3 {
-  text-transform: uppercase;
-  margin-bottom: 0; }
-
-.hero__span {
-  text-transform: uppercase; }
+  .hero__position {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    font-size: 25px;
+    float: right;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px 50px 25px; }
+  .hero__header {
+    text-transform: uppercase;
+    margin-bottom: 0; }
+  .hero__span {
+    text-transform: uppercase; }
 
 .benefits {
   margin-top: 50px; }
-
-.benefits__header {
-  text-transform: uppercase; }
+  .benefits__header {
+    text-transform: uppercase; }
+  .benefits__hover:hover .fa {
+    color: white;
+    background-color: #00C7E8;
+    transition: 0.3s; }
+  .benefits__hover:hover {
+    transition: 0.3s;
+    color: #00C7E8; }
+  .benefits__span {
+    color: #A5A5A5; }
 
 .fa {
   color: #FFF;
@@ -122,29 +126,31 @@ h3 {
   font-size: 50px;
   border-radius: 10%; }
 
-.benefits__hover:hover .fa {
-  color: white;
-  background-color: #00C7E8;
-  transition: 0.3s; }
-
-.benefits__hover:hover {
-  transition: 0.3s;
-  color: #00C7E8; }
-
-.benefits__span {
-  color: #A5A5A5; }
-
-.featured__works {
+.fw {
   margin-top: 50px; }
+  .fw__header {
+    text-transform: uppercase;
+    font-size: 30px; }
+  .fw__span {
+    color: #A5A5A5;
+    margin: 0 auto;
+    max-width: 600px; }
 
-.fw__header {
-  text-transform: uppercase;
-  font-size: 30px; }
-
-.fw__span {
-  color: #A5A5A5;
-  margin: 0 auto;
-  max-width: 600px; }
+.gallery {
+  margin-top: 50px; }
+  .gallery__overlay {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(111, 111, 111, 0.5);
+    width: 100%;
+    height: 100%;
+    text-align: center; }
+  .gallery__hover {
+    position: relative; }
+  .gallery__hover:hover .gallery__overlay {
+    display: block; }
 
 .glallery__img {
   border: 1px solid #eef442;
@@ -152,25 +158,6 @@ h3 {
   object-fit: cover;
   display: block;
   width: 100%; }
-
-.gallery {
-  margin-top: 50px; }
-
-.overlay {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: rgba(111, 111, 111, 0.5);
-  width: 100%;
-  height: 100%;
-  text-align: center; }
-
-.gallery__hover {
-  position: relative; }
-
-.gallery__hover:hover .overlay {
-  display: block; }
 
 .fas {
   color: white;
@@ -181,6 +168,30 @@ h3 {
 .team {
   margin-top: 50px;
   text-align: center; }
+  .team__overlay {
+    display: none;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    text-align: center; }
+  .team__hover {
+    margin-left: 20px;
+    margin-right: 20px;
+    position: relative; }
+  .team__hover:hover .team__overlay {
+    display: block; }
+  .team__header {
+    padding-top: 10px;
+    margin: 0 auto; }
+  .team__span {
+    color: #FFF;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    padding: 40%; }
 
 .team__img {
   border-radius: 50%;
@@ -189,51 +200,19 @@ h3 {
   object-fit: cover;
   display: block; }
 
-.team__overlay {
-  display: none;
-  position: absolute;
-  background: rgba(0, 0, 0, 0.8);
-  border-radius: 50%;
-  width: 100%;
-  height: 100%;
-  justify-content: center;
-  text-align: center; }
-
-.team__hover {
-  margin-left: 20px;
-  margin-right: 20px;
-  position: relative; }
-
-.team__hover:hover .team__overlay {
-  display: block; }
-
-.team__header {
-  padding-top: 10px;
-  margin: 0 auto; }
-
-.team__span {
-  color: #FFF;
-  font-size: 30px;
-  display: flex;
-  justify-content: center;
-  padding: 40%; }
-
-.banner__txt {
-  padding-left: 50px;
-  column-count: 2; }
-
-.banner__header {
-  text-transform: uppercase; }
-
 .banner {
   margin-top: 50px;
   background-image: url("https://tinyurl.com/y7v6mrly");
   color: #FFF;
   overflow: hidden;
   padding: 50px; }
-
-.banner__position {
-  position: relative; }
+  .banner__position {
+    position: relative; }
+  .banner__txt {
+    padding-left: 50px;
+    column-count: 2; }
+  .banner__header {
+    text-transform: uppercase; }
 
 .banner__img {
   width: 100%;
@@ -242,36 +221,49 @@ h3 {
 
 .numbers {
   margin-top: 20px; }
+  .numbers__span {
+    color: #00C7E8;
+    font-weight: bold;
+    font-size: 20px; }
+  .numbers_header, .numbers_header_red, .numbers_header_blue, .numbers_header_yellow, .numbers_header_green {
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 0; }
+  .numbers_header_red {
+    color: red; }
+  .numbers_header_blue {
+    color: blue; }
+  .numbers_header_yellow {
+    color: yellow; }
+  .numbers_header_green {
+    color: green; }
 
-.numbers_header, .numbers_header_red, .numbers_header_blue, .numbers_header_yellow, .numbers_header_green {
-  font-size: 50px;
-  font-weight: bold;
-  margin-bottom: 0; }
-
-.numbers_header_red {
-  color: red; }
-
-.numbers_header_blue {
-  color: blue; }
-
-.numbers_header_yellow {
-  color: yellow; }
-
-.numbers_header_green {
-  color: green; }
-
-.span__numbers {
-  color: #00C7E8;
-  font-weight: bold;
-  font-size: 20px; }
-
-footer {
+.footer {
   margin-top: 50px;
   color: #FFF;
   background-color: #313332; }
-
-.address__line {
-  display: block; }
+  .footer__position {
+    padding-left: 20px; }
+  .footer__copyright {
+    background-color: #111;
+    padding: 10px;
+    padding-left: 50px;
+    padding-right: 50px; }
+  .footer__header {
+    text-transform: uppercase;
+    text-align: center;
+    overflow: hidden; }
+  .footer__header:after {
+    content: "";
+    display: inline-block;
+    height: 0.5em;
+    vertical-align: bottom;
+    width: 100%;
+    margin-right: -100%;
+    margin-left: 5px;
+    border-top: 1px solid #fff; }
+  .footer__adress__line {
+    display: block; }
 
 .fab {
   font-size: 20px;
@@ -281,42 +273,17 @@ footer {
   border-radius: 25%;
   margin: 5px; }
 
-.copyright {
-  background-color: #111;
-  padding: 10px;
-  padding-left: 50px;
-  padding-right: 50px; }
-
-.footer__position {
-  padding-left: 20px; }
-
-.footer__header {
-  text-transform: uppercase;
-  text-align: center;
-  overflow: hidden; }
-
-.footer__header:after {
-  content: "";
-  display: inline-block;
-  height: 0.5em;
-  vertical-align: bottom;
-  width: 100%;
-  margin-right: -100%;
-  margin-left: 5px;
-  border-top: 1px solid #fff; }
-
 @media (max-width: 767px) {
-  h1 {
+  .nav__header {
     padding-top: 10px;
     float: none;
     text-align: center; }
-
-  li {
+  .nav__links {
     float: left;
     display: block;
     text-align: center; }
 
-  .hero {
+  .hero__position {
     float: none;
     text-align: center; }
 
@@ -327,24 +294,23 @@ footer {
     margin: 0 auto;
     text-align: center; }
 
-  .banner__img {
-    position: static;
-    display: block; }
+  .banner__span {
+    padding-left: 0; }
+  .banner__txt {
+    columns: 1; }
 
   .benefits__position {
     padding-top: 10px; }
+
+  .banner__img {
+    position: static;
+    display: block; }
 
   .team__img {
     margin-top: 20px;
     width: 100%; }
 
   .glallery__img {
-    height: 100%; }
-
-  .span__banner {
-    padding-left: 0; }
-
-  .banner__txt {
-    columns: 1; } }
+    height: 100%; } }
 
 /*# sourceMappingURL=style.css.map */
